@@ -1,0 +1,13 @@
+# ninja log v5
+1	128	7157925454987461	CMakeFiles/dm_le_restaurant.dir/main.c.obj	2b5f1805dcf370c9
+130	274	7157925456349058	dm_le_restaurant.exe	1444f672d88ed16c
+2	101	7157926027251358	CMakeFiles/dm_le_restaurant.dir/main.c.obj	2b5f1805dcf370c9
+102	257	7157926028684294	dm_le_restaurant.exe	1444f672d88ed16c
+3	94	7157926121761417	CMakeFiles/dm_le_restaurant.dir/main.c.obj	2b5f1805dcf370c9
+95	233	7157926123077582	dm_le_restaurant.exe	1444f672d88ed16c
+2	106	7157926186475632	CMakeFiles/dm_le_restaurant.dir/main.c.obj	2b5f1805dcf370c9
+107	261	7157926187986024	dm_le_restaurant.exe	1444f672d88ed16c
+2	98	7157926247933977	CMakeFiles/dm_le_restaurant.dir/main.c.obj	2b5f1805dcf370c9
+99	210	7157926249003390	dm_le_restaurant.exe	1444f672d88ed16c
+2	116	7157926299912494	CMakeFiles/dm_le_restaurant.dir/main.c.obj	2b5f1805dcf370c9
+117	314	7157926301710176	dm_le_restaurant.exe	1444f672d88ed16c
