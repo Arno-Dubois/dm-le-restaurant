@@ -11,7 +11,7 @@ int assignTable(int guestCount) {
 
 
 
-int menuPrice(char dish,char drink,char dessert) {
+int generateMenuPrice(char dish,char drink,char dessert) {
     int total = 0;
     
     switch (dish) {
@@ -24,7 +24,7 @@ int menuPrice(char dish,char drink,char dessert) {
     switch (drink) {
         case 's': total += 5; break;   // If guest requested some 'soda'     then add  5$ to total
         case 'e': total += 2; break;   // If guest requested some 'eau'      then add  2$ to total
-        case 'l': total += 12; break;  // If guest requested some 'lomonade' then add 12$ to total
+        case 'l': total += 12; break;  // If guest requested some 'limonade' then add 12$ to total
         default: return 0;             // Else return an error
     }
 
@@ -41,10 +41,8 @@ int menuPrice(char dish,char drink,char dessert) {
 
 
 int main() {
-    int guestCount;
-    char dish, drink, dessert;
-
     // Getting guest count
+    int guestCount;
     printf("\nBonjour, combien êtes vous ?\n");
     scanf(" %d", &guestCount);
 
@@ -58,6 +56,7 @@ int main() {
         printf("\nTrès bien veuiller prendre la table n°%d\n", assignedTable);
 
     // Getting selected menu
+    char dish, drink, dessert;
     printf("\nQue voulez vous en plats ?\n('c' pour couscous(15$),\n 't' pour tomates(8$) ou\n 'r' pour risotto(23$))\n");
     scanf(" %c", &dish);
 
@@ -68,14 +67,14 @@ int main() {
     scanf(" %c", &dessert);
 
     // Making the total price of menu if an error is returned, end program
-    int price = menuPrice(dish, drink, dessert);
-    if(price == 0) {
+    int menuPrice = generateMenuPrice(dish, drink, dessert);
+    if(menuPrice == 0) {
         printf("\nDésoler votre commande est invalide.");
         return 1;
     }
 
     // Making the total for all guest
-    int totalPrice = price * guestCount;
+    int totalPrice = menuPrice * guestCount;
     printf("\nTrès bien cela vous fera un total de %d$\n", totalPrice);
 
 
