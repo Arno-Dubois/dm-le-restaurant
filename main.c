@@ -1,5 +1,7 @@
 #include <stdio.h>
 
+
+
 int assignTable(int guestCount) {
     if(0 < guestCount && guestCount <= 2) return 1; // If the number of guest is between 0 and 2 assign them to table 1
     if(2 < guestCount && guestCount <= 4) return 2; // If the number of guest is between 2 and 4 assign them to table 2
@@ -7,7 +9,9 @@ int assignTable(int guestCount) {
     return 0;                                       // Else return error
 }
 
-int menuPrice(char dish,int drink,int dessert) {
+
+
+int menuPrice(char dish,char drink,char dessert) {
     int total = 0;
     
     switch (dish) {
@@ -34,41 +38,46 @@ int menuPrice(char dish,int drink,int dessert) {
     return total;
 }
 
+
+
 int main() {
     int guestCount;
     char dish, drink, dessert;
 
     // Getting guest count
-    printf("Bonjour, combien êtes vous ?");
-    scanf("%d", &guestCount);
+    printf("\nBonjour, combien êtes vous ?\n");
+    scanf(" %d", &guestCount);
 
-    // Assigning them to a table
+    // Assigning them to a table if an error is returned, end program
     int assignedTable = assignTable(guestCount);
-    if(assignedTable == 0)
-        printf("Désoler vous êtes trop nombreux, je doit vous refuser.");
+    if(assignedTable == 0) {
+        printf("\nDésoler vous êtes trop nombreux, je doit vous refuser.");
+        return 1;
+    }
     else
-        printf("Très bien veuiller prendre la table n°%d\n", assignedTable);
+        printf("\nTrès bien veuiller prendre la table n°%d\n", assignedTable);
 
     // Getting selected menu
-    printf("Que voulez vous en plats ?('c' pour couscous(15$), 't' pour tomates(8$) et 'r' pour risotto(23$))");
-    scanf("%c\n", &dish);
+    printf("\nQue voulez vous en plats ?\n('c' pour couscous(15$),\n 't' pour tomates(8$) ou\n 'r' pour risotto(23$))\n");
+    scanf(" %c", &dish);
 
-    printf("Que voulez vous en boissons ?('s' pour soda(5$), 'e' pour eau(2$) et 'l' pour limonade(12$))");
-    scanf("%c\n", &drink);
+    printf("\nQue voulez vous en boissons ?\n('s' pour soda(5$),\n 'e' pour eau(2$) ou\n 'l' pour limonade(12$))\n");
+    scanf(" %c", &drink);
 
-    printf("Que voulez vous en desserts ?('t' pour tiramisu(62$), 'g' pour glace(3$) et 'm' pour macaron(8$))");
-    scanf("%c\n", &dessert);
+    printf("\nQue voulez vous en desserts ?\n('t' pour tiramisu(62$),\n 'g' pour glace(3$) ou\n 'm' pour macaron(8$))\n");
+    scanf(" %c", &dessert);
 
-    // Making the total price of menu
+    // Making the total price of menu if an error is returned, end program
     int price = menuPrice(dish, drink, dessert);
     if(price == 0) {
-        printf("Désoler votre commande est invalide.");
+        printf("\nDésoler votre commande est invalide.");
         return 1;
     }
 
     // Making the total for all guest
     int totalPrice = price * guestCount;
-    scanf("Très bien cela vous fera un total de %d $", totalPrice);
+    printf("\nTrès bien cela vous fera un total de %d$\n", totalPrice);
+
 
 
 
